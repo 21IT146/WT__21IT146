@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter the name:<input type="text" id="name">
+    <button type="button" onclick="fun()">click</button>
+    <p id="hi"></p>
+    <script>
+       fun();
+      
+       function fun()
+       {
+        getdata();
+        async function getdata()
+       {
+        let a=document.getElementById("name").value;
+       // console.log(a);
+        const data=await fetch(`https://api.nationalize.io?name=${a}`);
+        const pdata=await data.json();
+       //console.log(pdata);
+        max(pdata);
+       
+       }
+    }
+       
+       function max(pdata)
+       {
+        const bh1=pdata.country[0].probability;
+        const bh2=pdata.country[0].country_id;
+        for(let i=0;i<5;i++)
+        {
+            if(bh1<pdata.country[i].probability)
+            {
+                bh1=pdata.country[i].probability;
+                bh2=pdata.country[i].country_id;
+            }
+        }
+        console.log(`country id ${bh2} and probability is${bh1}`);
+       }
+       
+    </script>
+</body>
+</html>
