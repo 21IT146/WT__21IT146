@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<form id="spouralform">
+<label for="firstName">First Name:</label>
+<input type="text" id="firstName" name="firstName" required><br><br>
+
+<label for="lastName">Last Name:</label>
+<input type="text" id="lastName" name="lastName" required><br><br>
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required><br><br>
+
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" required><br><br>
+
+<label for="confirmPassword">Confirm Password:</label>
+<input type="password" id="confirmPassword" name="confirmPassword"
+required><br><br>
+
+<label for="gender">Gender:</label>
+<select id="gender" name="gender" required >
+<option value=""></option>
+<option value="male">Male</option>
+<option value="female">Female</option>
+<option value="other">Other</option>
+</select><br><br>
+
+<label for="address">Address:</label>
+<textarea id="address" name="address" rows="2" optional></textarea><br><br>
+
+<input type="submit" value="Submit">
+</form>
+<script>
+
+const form = document.getElementById("spouralform");
+
+form.addEventListener("submit", (e) => {e.preventDefault();
+
+const firstName = document.getElementById("firstName").value;
+const lastName = document.getElementById("lastName").value;
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
+const confirmPassword = document.getElementById("confirmPassword").value;
+const gender = document.getElementById("gender").value;
+const address = document.getElementById("address").value;
+
+if(firstName.length<5 || firstName.length>12)
+{
+alert("Please Enter valid name length");
+
+
+}
+if(password.length<7 || password.length>12)
+{
+alert("Please enter valid length password");
+}
+if (password !== confirmPassword) {
+alert("Passwords do not match.");
+return;
+}
+});
+</script>
+</body>
+</html>
