@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>color table</title>
+</head>
+<body>
+
+<table border="2px solid gray" style="border-collapse: collapse;border-spacing: 10px;
+font-size: 50px;">
+<tr id="tr0">
+<th>red</th>
+
+IT255 – Web Technologies CSPIT-KDPIT
+
+21IT136 29
+<th> background-color</th>
+<th> background-color</th>
+</tr>
+<tr id="tr2">
+<td>orange</td>
+<td>background-color</td>
+<td>background-color</td>
+</tr>
+<tr id="tr3">
+<td>yellow</td>
+<td>background-color</td>
+<td>background-color</td>
+</tr>
+<tr id="tr1">
+<td>pink</td>
+<td>background-color </td>
+<td> background-color</td>
+</tr>
+</table>
+<script>
+var arr = ["red","pink","orange","yellow"]
+for (let i = 0; i < 4; i++) {
+let x = document.getElementById("tr"+i)
+x.style.backgroundColor = arr[i];
+}
+
+</script>
+</body>
+</html>

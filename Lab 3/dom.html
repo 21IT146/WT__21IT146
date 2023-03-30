@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+
+<button id="addevent"> with add event listener</button>
+<button id="oc" onclick="r();"> with onclick</button>
+
+<button id="ocd"> with DOM onclick</button>
+<p id="p"></p>
+<script>
+let p = document.getElementById("p");
+function r() {
+// document.write(`handle by onclick in html `)
+p.innerHTML = 'handle by onclick in html';
+}
+let btn1 = document.getElementById("addevent")
+let btn2 = document.getElementById("ocd")
+btn1.onclick = () => {
+p.innerHTML = 'handle with addeventlistner in js';
+// document.write(` `)
+}
+btn2.onclick = function () {
+
+p.innerHTML = 'handle by with DOM Onclick property in js';
+// document.write(` `)
+}
+</script>
+</body>
+</html>

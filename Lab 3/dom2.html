@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<script>
+function changeColor() {
+var color = getRandomColor();
+document.body.style.backgroundColor = color;
+}
+
+function getRandomColor() {
+var letters = '0123456789ABCDEF';
+var color = '#';
+for (var i = 0; i < 6; i++) {
+color += letters[Math.floor(Math.random() * 16)];
+}
+return color;
+}
+
+setInterval(changeColor, 60000);
+</script>
+</head>
+<body>
+<p>The background color will change every 1 minute.</p>
+</body>
+</html>
